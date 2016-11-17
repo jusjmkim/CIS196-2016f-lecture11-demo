@@ -1,0 +1,19 @@
+<:Title>
+  Home
+
+<:Body>
+  <h1>Home</h1>
+
+<div>
+  {{ store._messages.each do |message| }}
+  <p>
+    <strong>{{ message.user.name }}</strong>
+    <span>{{ message.body }}</span>
+  </p>
+  {{ end }}
+</div>
+<br>
+<form e-submit="send_message">
+  <input type="text" value="{{ page._form._body }}">
+  <input type="submit">
+</form>
